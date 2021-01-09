@@ -5,22 +5,20 @@ Here is a list of some basic Git commands to get you going with Git.
 For more detail, check out the  Atlassian Git Tutorials  for a visual introduction to Git commands and workflows, including examples.
 
 
-|Git task |	Notes	Git   | commands |
-|---------|:-----------:|:--------:|
-|Tell Git who you are	Configure the author name and email address to be used with your commits.|
-|Note that Git strips some characters (for example trailing periods) from user.name.|
+Tell Git who you are	Configure the author name and email address to be used with your commits.
+Note that Git strips some characters (for example trailing periods) from user.name.
 
-git config --global user.name "Sam Smith"
-git config --global user.email sam@example.com
-|
+> git config --global user.name "Sam Smith"
+> git config --global user.email sam@example.com
+
 Create a new local repository	 	
-git init
+> git init
 Check out a repository	Create a working copy of a local repository:
-git clone /path/to/repository
+> git clone /path/to/repository
 For a remote server, use:
-git clone username@host:/path/to/repository
+> git clone username@host:/path/to/repository
 Add files	Add one or more files to staging (index):
-git add <filename>
+> git add <filename>
 
 git add *
 Commit	Commit changes to head (but not yet to the remote repository):
