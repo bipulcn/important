@@ -443,3 +443,6 @@ unauthorized: authentication required
 Log in with docker login and repeat the push attempt. Then verify that it exists on your Docker Hub repository page.
 
 You can now use docker pull sammy/ubuntu-nodejs to pull the image to a new machine and use it to run a new container.
+
+
+[resource 1](https://www.digitalocean.com/community/tutorials/how-to-install-and-use-docker-on-ubuntu-18-04)
