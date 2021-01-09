@@ -27,6 +27,7 @@ Make sure you are about to install from the Docker repo instead of the default U
 
 You’ll see output like this, although the version number for Docker may be different:
 
+<pre>
 Output of apt-cache policy docker-ce
 docker-ce:
   Installed: (none)
@@ -34,6 +35,7 @@ docker-ce:
   Version table:
      18.03.1~ce~3-0~ubuntu 500
         500 https://download.docker.com/linux/ubuntu bionic/stable amd64 Packages
+</pre>
 
 Notice that docker-ce is not installed, but the candidate for installation is from the Docker repository for Ubuntu 18.04 (bionic).
 
