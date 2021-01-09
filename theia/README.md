@@ -41,16 +41,17 @@ Notice that docker-ce is not installed, but the candidate for installation is fr
 
 Finally, install Docker:
 
-sudo apt install docker-ce
+> sudo apt install docker-ce
 
 Docker should now be installed, the daemon started, and the process enabled to start on boot. Check that it’s running:
 
-sudo systemctl status docker
+> sudo systemctl status docker
 
 The output should be similar to the following, showing that the service is active and running:
 
-Output
-● docker.service - Docker Application Container Engine
+Output:
+<pre>
+docker.service - Docker Application Container Engine
    Loaded: loaded (/lib/systemd/system/docker.service; enabled; vendor preset: enabled)
    Active: active (running) since Thu 2018-07-05 15:08:39 UTC; 2min 55s ago
      Docs: https://docs.docker.com
@@ -59,4 +60,53 @@ Output
    CGroup: /system.slice/docker.service
            ├─10096 /usr/bin/dockerd -H fd://
            └─10113 docker-containerd --config /var/run/docker/containerd/containerd.toml
+</pre>
 Installing Docker now gives you not just the Docker service (daemon) but also the docker command line utility, or the Docker client. We’ll explore how to use the docker command later in this tutorial.
+
+# Step 2 — Executing the Docker Command Without Sudo (Optional)
+By default, the docker command can only be run the root user or by a user in the docker group, which is automatically created during Docker’s installation process. If you attempt to run the docker command without prefixing it with sudo or without being in the docker group, you’ll get an output like this:
+> docker
+
+Output
+<pre>
+docker: Cannot connect to the Docker daemon. Is the docker daemon running on this host?.
+See 'docker run --help'.
+</pre>
+If you want to avoid typing sudo whenever you run the docker command, add your username to the docker group:
+
+> sudo usermod -aG docker ${USER}
+
+> sudo usermod -aG docker root
+
+To apply the new group membership, log out of the server and back in, or type the following:
+
+> su - ${USER}
+
+> su - root
+
+You will be prompted to enter your user’s password to continue.
+
+Confirm that your user is now added to the docker group by typing:
+
+> id -nG
+
+Output
+<pre>
+sammy sudo docker
+</pre>
+If you need to add a user to the docker group that you’re not logged in as, declare that username explicitly using:
+
+> sudo usermod -aG docker username
+
+The rest of this article assumes you are running the docker command as a user in the docker group. If you choose not to, please prepend the commands with sudo.
+
+Let’s explore the docker command next.
+
+### Step 3 — Using the Docker Command
+Using docker consists of passing it a chain of options and commands followed by arguments. The syntax takes this form:
+
+docker [option] [command] [arguments]
+
+To view all available subcommands, type:
+
+> docker
