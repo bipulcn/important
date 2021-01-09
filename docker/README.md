@@ -423,7 +423,7 @@ a3b5c80a4eba: Pushed
 
 ...
 </pre>
-![Dockar Hub](https://github.com/bipulcn/importdoc/tree/main/docker/ec2vX3Z.png)
+![Dockar Hub](https://github.com/bipulcn/importdoc/blob/main/docker/ec2vX3Z.png)
 
 After pushing an image to a registry, it should be listed on your account’s dashboard, like that show in the image below.
 
